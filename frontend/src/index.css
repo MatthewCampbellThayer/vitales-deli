@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-deli-cream text-deli-brown;
+    font-family: Georgia, Cambria, 'Times New Roman', serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-deli-red text-white font-semibold px-5 py-2.5 rounded-lg hover:bg-deli-red-dark transition-colors duration-150 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-secondary {
+    @apply bg-white text-deli-red border-2 border-deli-red font-semibold px-5 py-2.5 rounded-lg hover:bg-deli-cream transition-colors duration-150;
+  }
+  .btn-green {
+    @apply bg-deli-olive-mid text-white font-semibold px-4 py-2 rounded-lg hover:bg-deli-olive-light transition-colors duration-150;
+  }
+  .chip {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium cursor-pointer select-none transition-all duration-150;
+  }
+  .chip-active {
+    background-color: #3D6428;
+    @apply text-white;
+  }
+  .chip-inactive {
+    @apply bg-gray-200 text-gray-400 line-through;
+  }
+  .chip-extra {
+    @apply bg-deli-cream-dark text-deli-brown border border-deli-tan;
+  }
+  .chip-extra-active {
+    @apply bg-deli-red text-white border-deli-red;
+  }
+}
+
+/* Modal animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+.modal-animate {
+  animation: fadeIn 150ms ease-out;
+}
+
+/* Progress bar shrink animation — duration set via inline style */
+@keyframes shrinkBar {
+  from { transform: scaleX(1); }
+  to { transform: scaleX(0); }
+}
+.progress-bar-animate {
+  transform-origin: left;
+  animation: shrinkBar linear forwards;
+}
